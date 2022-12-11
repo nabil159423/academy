@@ -1,0 +1,21 @@
+h1{
+    color:rgba(19, 20, 130, 0.929);
+    font-family:sans-serif ;
+    text-align:center;
+}
+h2{
+    color:rgba(19, 20, 130, 0.929);
+    font-family:sans-serif ;
+
+}
+#button{
+    color:green;
+    font-family:sans-serif ;
+    font-weight:bold;
+    background-color: darkgrey;
+    
+}
+td,tr{
+    border: 1px solid black;
+    padding: 3px;
+}

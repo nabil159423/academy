@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="/css/style.css"/>
+        <title>Panier</title>
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Panier</h2>
+        <form method="get" action="/panier/finaliser" >
+        
+            <input type='submit' id="button"  value="Finaliser l'inscription">
+            <button  id='button' onclick="window.location.href= '/catalogue';" formaction="/catalogue">Retourner au catalogue de formation</button>
+            
+        </form>
+        
+  
+    </br>
+</br>
+        <table>
+        <tr>
+            <td>Id</td>
+            <td>Nom</td>
+            <td>Prix</td>
+            <td>Début</td>
+            <td>Fin</td>
+            <td></td>
+        </tr>
+        <% for(let i=0 ; i < formationinscrit.length;i++) { 
+                for(let j=0; j< catalogue.length;j++){
+                    if (formationinscrit[i]== catalogue[j].idformation){%>
+                        <tr>
+                        <td><%=catalogue[j].idformation%></td>
+                        <td><%=catalogue[j].nameformation%></td>
+                        <td><%=catalogue[j].prixformation%></td>
+                        <td><%=catalogue[j].debutformation%></td>
+                        <td><%=catalogue[j].finformation%></td>
+                        <td><form action='/panier/delete' method="post">
+                            <input type='hidden' name="formationdelete" value="<%=catalogue[j].idformation%>"/> 
+                            <input type='submit'  id="button"  value="Supprimer"/>
+                            
+                            </form>
+                            
+                        </td>   
+                        <tr>
+                        <%}
+                }
+
+        }%>
+
+    </table>    
+    </body>
+</html>

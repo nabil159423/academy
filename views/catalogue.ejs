@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="/css/style.css"/>
+        <title>Catalogue</title>
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Formation disponibles</h2>
+
+       
+        <button id="button" onclick="window.location.href='/panier';">Voir le panier</button>
+        <button  id='button' onclick="window.location.href= '/user';">Se connecter</button>
+        
+    </br>
+</br>
+
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Nom</td>
+                <td>Prix</td>
+                <td>Début</td>
+                <td>Fin</td>
+                <td></td>
+            </tr>
+            
+            <% for(let i=0 ; i < catalogue.length;i++) { %>
+                <tr>
+                <td><%=catalogue[i].idformation%></td>
+                <td><%=catalogue[i].nameformation%></td>
+                <td><%=catalogue[i].prixformation%></td>
+                <td><%=catalogue[i].debutformation%></td>
+                <td><%=catalogue[i].finformation%></td>
+                <td>
+                    <form action='/panier' method='post'>
+                        <input type='hidden' name="formation" value="<%=catalogue[i].idformation%>"> 
+                        <input type='submit' id="button"  value="S'inscrire">
+                    </form>
+                </td>   
+                <tr>
+            <%}%>
+           
+
+
+        </table>
+    
+    </body>
+</html>
